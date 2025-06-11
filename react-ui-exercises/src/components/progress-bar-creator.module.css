@@ -1,0 +1,17 @@
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.progress-bar-initial {
+    background-color: gainsboro;
+    height: 8px;
+    width: 100%;
+}
+
+.progress-bar-loading {
+    background-color: green;
+    height: 8px;
+}

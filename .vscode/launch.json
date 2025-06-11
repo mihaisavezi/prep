@@ -1,6 +1,5 @@
 {
     "configurations": [
-        
         {
             "name": "Debug Vitest Tests",
             "type": "node",
@@ -22,6 +21,18 @@
           "args": ["run", "${relativeFile}"],
           "smartStep": true,
           "console": "integratedTerminal"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Debug Vite React App",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/react-ui-exercises",
+            "sourceMaps": true,
+            "sourceMapPathOverrides": {
+                "/@fs/*": "*",
+                "/*": "${webRoot}/*"
+            }
         }
     ]
 }
