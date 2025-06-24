@@ -5,11 +5,14 @@
             "type": "node",
             "request": "launch",
             "program": "${workspaceFolder}/node_modules/vitest/vitest.mjs",
-            "args": ["run", "--no-file-parallelism", "--inspect-brk", "--watch"],
+            "args": ["--inspect-brk", "--no-file-parallelism", "--pool", "forks"],
             "autoAttachChildProcesses": true,
             "console": "integratedTerminal",
             "skipFiles": ["<node_internals>/**"],
-            "smartStep": true
+            "smartStep": true,
+            "restart": true,
+            "timeout": 30000,
+            "stopOnEntry": false
         },
         {
           "type": "node",
