@@ -11,7 +11,8 @@ const MortgageCalculator = (props: Props) => {
 
   const compute = () => {
       // Validate inputs
-      if (amount <= 0 || termYears <= 0 || rate < 0) {
+      if (isNaN(amount) || isNaN(termYears) || isNaN(rate) ||
+          amount <= 0 || termYears <= 0 || rate < 0) {
         setOutputs({
           'Monthly Payment': 0,
           'Total Interest Paid': 0,

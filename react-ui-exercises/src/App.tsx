@@ -7,8 +7,10 @@ import ProgressBarCreator from './components/progress-bar-creator'
 import MemoryLeakDemo from './components/memory-leak-demo'
 import MortgageCalculator from './components/mortgage-calculator'
 import Tabs from './components/tabs'
+import BooleanDemo from './components/boolean-demo'
 
 function App() {
+
 
   return (
     <>
@@ -25,6 +27,9 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+      </div>
+      <div className="hooks">
+        <BooleanDemo />
       </div>
       <p className="read-the-docs">
         The list of components
