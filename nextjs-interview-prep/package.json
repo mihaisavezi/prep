@@ -14,16 +14,23 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^5.1.1",
 		"@t3-oss/env-nextjs": "^0.12.0",
+		"@tanstack/react-query": "^5.81.2",
+		"jose": "^6.0.11",
+		"lucide-react": "^0.525.0",
 		"next": "^15.2.3",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
 		"react-error-boundary": "^6.0.0",
-		"zod": "^3.24.2",
+		"react-hook-form": "^7.58.1",
+		"react-window": "^1.8.11",
+		"styled-components": "^6.1.19",
+		"zod": "^3.25.67",
 		"zustand": "^5.0.5"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.0.5",
 		"@tailwindcss/postcss": "^4.0.15",
 		"@types/node": "^20.14.10",
 		"@types/react": "^19.0.0",

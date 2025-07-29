@@ -8,9 +8,27 @@ import MemoryLeakDemo from './components/memory-leak-demo'
 import MortgageCalculator from './components/mortgage-calculator'
 import Tabs from './components/tabs'
 import BooleanDemo from './components/boolean-demo'
+import { useEffect, useState } from 'react'
+import Modal from './Modal'
+import DataRow from './DataRow'
 
 function App() {
 
+  // before fetching, during fetching, after fetching
+  // after fetching: 1) success 2) error
+  const [response, setResponse] = useState({data: [], error: false});
+  
+  useEffect(() => {
+    async function getData() {
+      return await fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+    }
+    
+    getData().then((data) => setResponse((response) => ({...response, data})))
+  }, [])
+
+  
+  
 
   return (
     <>
@@ -28,23 +46,24 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
+      {response?.data.length > 0 &&
+        response?.data.map((entry) => (
+          <DataRow key={entry.id} entry={entry}/>
+        ))}
       <div className="hooks">
         <BooleanDemo />
       </div>
-      <p className="read-the-docs">
-        The list of components
-      </p>
+      <p className="read-the-docs">The list of components</p>
       <section className="components">
-        <Tabs/>
+        <Tabs />
         <MortgageCalculator />
         <MemoryLeakDemo />
         <ProgressBarCreator />
         <Accordion />
         <Counter />
       </section>
-
     </>
-  )
+  );
 }
 
 export default App
